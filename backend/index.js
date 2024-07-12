@@ -4,6 +4,7 @@ const app = express();
 app.use(express.json(), express.urlencoded({ extended: true }));
 
 const api = "http://20.244.56.144/test";
+//useless withour the Bearer token
 
 let products = [];
 let ascendingSortedProducts = [];
@@ -51,7 +52,7 @@ function getData(company, category, top, minPrice, maxPrice) {
   )
     .then((res) => res.json())
     .then((data) => {
-        console.log(data)
+      console.log(data);
       addId(products);
       ascendingSortedProducts = [];
       descendingSortedProducts = [];
